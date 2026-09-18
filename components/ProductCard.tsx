@@ -5,7 +5,7 @@ import { useCart } from "@/context/cart-context";
 import { Product } from "@/types";
 
 interface ProductCardProps {
-  product: Product;
+    product: Product;
 }
 
 

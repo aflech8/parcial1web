@@ -13,17 +13,12 @@ export function CartProvider({ children }: { children: ReactNode }) {
             const existingItem = prevCart.find((item) => item.id === product.id);
 
             if (existingItem) {
-                // INMUTABILIDAD: Mapeamos el arreglo para crear uno nuevo en memoria.
-                // Solo modificamos la cantidad del ítem que coincide.
-                return prevCart.map((item) =>  //TODO: Entender bien esto
+                return prevCart.map((item) =>  //TODO:revisar bien
                     item.id === product.id
                         ? { ...item, quantity: item.quantity + 1 }
                         : item
                 );
             }
-
-            // INMUTABILIDAD: Usamos el spread operator (...) para crear un nuevo arreglo
-            // con los elementos anteriores más el nuevo objeto.
             return [...prevCart, { ...product, quantity: 1 }];
         });
     };
