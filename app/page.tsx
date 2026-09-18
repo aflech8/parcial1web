@@ -4,7 +4,7 @@ import React from "react";
 import ProductCard from "@/components/ProductCard"
 import { Product, ProductsAPIResponse } from "@/types";
 
-interface ProductsResponse {
+interface ProductsResponse {  
   products: Product[];
   total: number;
   skip: number;

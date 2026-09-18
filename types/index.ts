@@ -11,13 +11,15 @@ export interface Product {
 
 export interface CartItem extends Product {
     quantity: number;
+    subprice?: number;
 }
 
 export interface CartContextType {
     cart: CartItem[];
     addToCart: (product: Product) => void;
-    removeFromCart?: (productId: number) => void;
-    clearCart?: () => void;
+    removeFromCart: (productId: number) => void;
+    updateQuantity: (productId: number, quantity: number) => void;
+    deleteCart: () => void;
 }
 
 export interface ProductsAPIResponse {
@@ -25,4 +27,11 @@ export interface ProductsAPIResponse {
     total: number;
     skip: number;
     limit: number;
+}
+
+export interface FormRta {
+    text: string;
+    email: string;
+    paymethod: string;
+    acceptterms: boolean;
 }

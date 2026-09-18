@@ -11,9 +11,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
     const addToCart = (product: Product) => {
         setCart((prevCart) => {
             const existingItem = prevCart.find((item) => item.id === product.id);
-
             if (existingItem) {
-                return prevCart.map((item) =>  //TODO:revisar bien
+                return prevCart.map((item) => 
                     item.id === product.id
                         ? { ...item, quantity: item.quantity + 1 }
                         : item
@@ -23,14 +22,33 @@ export function CartProvider({ children }: { children: ReactNode }) {
         });
     };
 
+    const removeFromCart = (productId: number) => {
+        setCart((prevCart) => prevCart.filter((item) => item.id !== productId));
+    };
+
+    const deleteCart = () => {
+        setCart([]);
+    };
+
+    const updateQuantity = (productId: number, quantity: number) => {
+        if (quantity <= 0) {
+            removeFromCart(productId);
+            return;
+        }
+        setCart((prevCart) =>
+            prevCart.map((item) =>
+                item.id === productId ? { ...item, quantity } : item
+            )
+        );
+    };
+
     return (
-        <CartContext.Provider value={{ cart, addToCart }}>
+        <CartContext.Provider value={{ cart, addToCart, removeFromCart, updateQuantity, deleteCart}}>
             {children}
         </CartContext.Provider>
     );
 }
 
-// 4. Custom Hook (Tu herramienta para acceder a la "nube")
 export function useCart() {
     const context = useContext(CartContext);
     if (!context) {
@@ -38,3 +56,5 @@ export function useCart() {
     }
     return context;
 }
+
+//const { removeFromCart, updateQuantity } = useCart();
