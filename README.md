@@ -1,3 +1,13 @@
+# Punto 3
+## Cambios punto 1
+Se realizo el guardado por diccionarios donde se guardo el id del producto y su catnidad que habia en el carrito, y se actualiza facil de esta forma el diccionario, ademas de eso queria implementar lo de guardar el subtotal de cada tipo de producto, esto multiplicando el precio del producto por la cantidad de productos, de esto cai en cuenta tarde y lo deje para despues peor no alcance
+## Cambios punto 2
+La idea es ir calculando los subtotales y despues se suman estos
+## Cambios punto 3
+Lo decidi hacer de la forma clasica osea sin react forms, pero salio mal, implemente lo basico, la estructura general del html y no alcance a implementar la validacion porque tuve muchos errores :(
+
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

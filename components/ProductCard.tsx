@@ -59,6 +59,3 @@ export default function ProductCard({ product }: ProductCardProps) {
     );
 }
 
-//line-clamp-1 -> oculta el texto en una linea
-//function handleChange(e: React.ChangeEvent<HTMLInputElement>) {const {name , value } = e.target; setForm((prev) => ({...prev, [name]: value}));}
-//function handleSumbit(e: React.FormEvent) {e.preventDefault(); alert("Holaa ${form.name), tu correo}")}

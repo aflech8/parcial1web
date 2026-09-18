@@ -10,8 +10,8 @@ export default function Formulario(){
     const [form, setForm] = useState<{name: "", email:"", select: "", checkbox: false} | undefined>();
 
     function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
-        const { name, value} = e.target;
-        setForm((prev)=> ({...prev, [name]: value}));
+        const { name, value } = e.target;
+        setForm((prev) => ({...prev, [name]: value}));
     }
 
     function handleSumbit(e: React.ChangeEvent) {
@@ -27,12 +27,16 @@ export default function Formulario(){
             </div>
             <div className="space-x-5">
                 <label htmlFor="email">Email:</label>
-                <input id="email" name="email" type="text" className="w-full bg-slate-300"/>
+                <input id="email" name="email" type="text" value={form.email}  className="w-full bg-slate-300"/>
             </div>
             <div className="space-x-5">
-                <label htmlFor="email">Email:</label>
+                <label htmlFor="email">Metodo de pago:</label>
                 <select name="paymethod" id="paymethod"></select>
             </div>
+            <div className="space-x-5">
+                <label htmlFor="metododepago">Metodo de pago:</label>
+            </div>
+            <button >Enviar</button>
         </form>
     )
 }
