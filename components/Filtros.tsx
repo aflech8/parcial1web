@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 export default function Filtros({products}: any) {
     const [filter1, setFilter1] = useState("");
 
-const productos_filtrados = products.filter((product: { title: string; })=> product.title.toLowerCase().includes(filter1.toLowerCase().trim()));
+const productos_filtrados = products.filter((product: { title: string; })=> product.title.toLowerCase().includes(filter1));
 
     return (
         <div>
