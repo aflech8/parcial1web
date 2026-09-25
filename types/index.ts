@@ -30,8 +30,18 @@ export interface ProductsAPIResponse {
 }
 
 export interface FormRta {
-    text: string;
+    name: string;
     email: string;
     paymethod: string;
     acceptterms: boolean;
+}
+
+export interface OrderConfirmationData {
+    orderId: string;
+    customerName: string;
+    customerEmail: string;
+    paymethod: string;
+    items: CartItem[];
+    total: number;
+    date: string;
 }
